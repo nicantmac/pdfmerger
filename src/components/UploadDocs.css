@@ -6,7 +6,7 @@
 
 /* file drop zone */
 .upload-file {
-    padding: 4rem 3rem;
+    padding: 2rem 3rem;
     width: 100%; max-width: 900px;
     display: flex; align-items: center;
     justify-content: center; text-align: center;

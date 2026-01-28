@@ -1,11 +1,9 @@
 import "./DocumentList.css";
 
-const files = [
-    { fileName: "fndvufins", fileSize: 38, fileChars: 1000 },
-    { fileName: "fndvufins", fileSize: 38, fileChars: 1000 },
-    { fileName: "fndvufins", fileSize: 38, fileChars: 1000 },
-    { fileName: "fndvufins", fileSize: 38, fileChars: 1000 },
-    { fileName: "fndvufins", fileSize: 38, fileChars: 1000 },
+const files: any[] = [
+    { fileName: "vnirvnrds", fileSize: 20, fileChars: 1000 },
+    { fileName: "vnirvnrds", fileSize: 20, fileChars: 1000 },
+    { fileName: "vnirvnrds", fileSize: 20, fileChars: 1000 },
 ];
 
 export default function DocumentList() {
@@ -20,22 +18,29 @@ export default function DocumentList() {
                 </button>
             </header>
 
-            <ul className="document-list__items">
-                {files.map((file, index) => (
-                    <li key={index} className="document-card">
-                        <div className="document-card__content">
-                            <h3 className="document-card__name">
-                                {file.fileName}
-                            </h3>
+            {files.length < 2 ? (
+                <div className="file-add-more">
+                    <h3>Add at least 2 documents to combine</h3>
+                    <p>No documents yet</p>
+                </div>
+            ) : (
+                <ul className="document-list__items">
+                    {files.map((file, index) => (
+                        <li key={index} className="document-card">
+                            <div className="document-card__content">
+                                <h3 className="document-card__name">
+                                    {file.fileName}
+                                </h3>
 
-                            <div className="document-card__meta">
-                                <span>{file.fileSize} KB</span>
-                                <span>{file.fileChars} chars</span>
+                                <div className="document-card__meta">
+                                    <span>{file.fileSize} KB</span>
+                                    <span>{file.fileChars} chars</span>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+                        </li>
+                    ))}
+                </ul>
+            )}
         </section>
     );
 }
