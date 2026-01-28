@@ -1,0 +1,14 @@
+.upload-container {
+    margin: 1rem 0;
+}
+.upload-file {
+    width: 100%;
+    max-width: 900px;
+    padding: 5rem 3rem;
+    font-size: 1.3rem;
+    border: 2px dashed lightgray;
+    border-radius: 20px;
+}
+.upload-file-input {
+    font-size: 1.3rem;
+}

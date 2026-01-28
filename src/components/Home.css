@@ -1,0 +1,20 @@
+* {
+    margin: 1rem auto 0;
+    box-sizing: border-box;
+}
+
+.doc-spacer {
+    width: 100%;
+    height: 2px;
+    background-color: #e8e8e8;
+    border-radius: 20px;
+}
+
+.doc-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 2rem;
+    padding: 0 2rem;
+    border: 1px solid black;
+}
