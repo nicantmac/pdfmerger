@@ -4,4 +4,9 @@ body {
 
 :root {
     --base-bg-color: black;
+    --base-font: Ebrima, Calibiri;
+    --text-color: #374151;
+    --light-text-color: #6b7280;
+    --main-color: #6366f1;
+    --bg-hover: #f9fafb;
 }

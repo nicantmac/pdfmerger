@@ -6,10 +6,10 @@ import DocumentList from "./DocumentList";
 function Home() {
     return (
         <section className="Home">
-            <header>
-                <h1>Combine your documents</h1>
-                <p>Combine multiple PDF documents into a single
-                    file quickly and securely. No registration required.
+            <header className="home-head">
+                <h1 className="hero-title">Combine your documents</h1>
+                <p className="hero-subtitle">Combine multiple PDF documents into
+                    a single file quickly and securely. No registration required.
                 </p>
             </header>
             <main className="doc-section">

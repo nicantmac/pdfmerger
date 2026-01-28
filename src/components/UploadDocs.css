@@ -1,14 +1,53 @@
 .upload-container {
-    margin: 1rem 0;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
 }
+
+/* file drop zone */
 .upload-file {
-    width: 100%;
-    max-width: 900px;
-    padding: 5rem 3rem;
-    font-size: 1.3rem;
-    border: 2px dashed lightgray;
-    border-radius: 20px;
+    padding: 4rem 3rem;
+    width: 100%; max-width: 900px;
+    display: flex; align-items: center;
+    justify-content: center; text-align: center;
+    border: 2px dashed #d1d5db; border-radius: 25px;
+    cursor: pointer; transition: all 0.25s ease;
 }
-.upload-file-input {
-    font-size: 1.3rem;
+
+/* hides the actual input */
+.upload-file-input { display: none; }
+
+/* content wrapper */
+.upload-content {
+    color: var(--text-color);
+    display: flex; align-items: center;
+    flex-direction: column;
 }
+
+/* big plus sign wrapper */
+.upload-plus {
+    width: 70px; height: 70px;
+    display: flex; align-items: center;
+    justify-content: center;
+    border-radius: 50px; border: 2px solid #9ca3af;
+    font-size: 2.5rem; line-height: 1;
+    transition: border-color 0.25s ease-in-out;
+}
+
+/* actual plus sign */
+.upload-plus svg { margin: 0; }
+
+/* main & sub text respectively */
+.upload-content p { margin: 1rem 0 0; font-size: 1.2rem; }
+.upload-content small { font-size: 0.9rem; color: var(--light-text-color); }
+
+.upload-file:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--main-color);
+}
+.upload-file:hover .upload-plus {
+    border-color: var(--main-color);
+}
+
+/* actual plus icon size */
+.upload-icon { width: 34px; height: 34px; }
