@@ -1,6 +1,13 @@
 import "./DocumentList.css";
+import DocumentFile from "./DocumentFile";
 
-const files: any[] = [
+type DocumentFileType = {
+    fileName: string;
+    fileSize: number;
+    fileChars: number;
+};
+
+const files: DocumentFileType[] = [
     { fileName: "vnirvnrds", fileSize: 20, fileChars: 1000 },
     { fileName: "vnirvnrds", fileSize: 20, fileChars: 1000 },
     { fileName: "vnirvnrds", fileSize: 20, fileChars: 1000 },
@@ -26,18 +33,7 @@ export default function DocumentList() {
             ) : (
                 <ul className="document-list__items">
                     {files.map((file, index) => (
-                        <li key={index} className="document-card">
-                            <div className="document-card__content">
-                                <h3 className="document-card__name">
-                                    {file.fileName}
-                                </h3>
-
-                                <div className="document-card__meta">
-                                    <span>{file.fileSize} KB</span>
-                                    <span>{file.fileChars} chars</span>
-                                </div>
-                            </div>
-                        </li>
+                        <DocumentFile file={file} key={index} />
                     ))}
                 </ul>
             )}
