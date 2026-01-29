@@ -1,6 +1,8 @@
 # PDF Merger
 A modern, client-side PDF and text document merging tool built with **React + TypeScript**.  
 
+### 🌐 Live Website - [Click here to visit PDFMerge](https://pdfmerging.netlify.app/)
+
 ## Objective
 Users can upload multiple files, review them in a structured list, reorder or manage them, and merge them into a single output document.
 
