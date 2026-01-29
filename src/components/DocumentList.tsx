@@ -8,32 +8,33 @@ type DocumentFileType = {
 };
 
 const files: DocumentFileType[] = [
-    { fileName: "vnirvnrds", fileSize: 20, fileChars: 1000 },
-    { fileName: "vnirvnrds", fileSize: 20, fileChars: 1000 },
-    { fileName: "vnirvnrds", fileSize: 20, fileChars: 1000 },
+    { fileName: "fghj", fileSize: 10, fileChars: 1000 },
+    { fileName: "fghj", fileSize: 10, fileChars: 1000 },
+    { fileName: "fghj", fileSize: 10, fileChars: 1000 },
+    { fileName: "fghj", fileSize: 10, fileChars: 1000 },
 ];
 
 export default function DocumentList() {
     return (
-        <section className="document-list">
-            <header className="document-list-head">
-                <p className="document-list__count">
+        <section className="doc-list">
+            <header className="doc-head">
+                <p className="doc-count">
                     Files to merge ({files.length})
                 </p>
-                <button className="document-list__action">
-                    Merge PDFs
-                </button>
+                <button className="doc-merge-btn">Merge PDFs</button>
             </header>
 
             {files.length < 2 ? (
-                <div className="file-add-more">
-                    <h3>Add at least 2 documents to combine</h3>
-                    <p>No documents yet</p>
+                <div className="file-add-sect">
+                    <h3 className="file-add-head">Add at least 2 documents to combine</h3>
+                    <p className="file-add-text">No documents yet</p>
                 </div>
             ) : (
-                <ul className="document-list__items">
+                <ul className="doc-list-items">
                     {files.map((file, index) => (
-                        <DocumentFile file={file} key={index} />
+                        <li key={index}>
+                            <DocumentFile file={file} />
+                        </li>
                     ))}
                 </ul>
             )}
