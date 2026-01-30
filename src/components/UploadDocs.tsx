@@ -1,15 +1,20 @@
-import React, { useState, useRef, ChangeEvent } from "react";
+import { useRef, ChangeEvent } from "react";
 import "./UploadDocs.css";
 
-export default function UploadDocs() {
-    const [files, setFiles] = useState<File[]>([]);
+interface UploadDocsProps {
+    onFilesSelected: (files: File[]) => void;
+}
+
+export default function UploadDocs({ onFilesSelected }: UploadDocsProps) {
     const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-    const handleFileSelect = (e: ChangeEvent<HTMLInputElement>): void => {
+    const handleFileSelect = (e: ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) return;
+
         const selectedFiles = Array.from(e.target.files);
-        setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+        onFilesSelected(selectedFiles);
     };
+
 
     return (
         <section className="upload-container">
@@ -23,28 +28,27 @@ export default function UploadDocs() {
                     onChange={handleFileSelect}
                 />
 
+
                 <div className="upload-content">
-          <span className="upload-plus">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="upload-icon"
-            >
-              <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6v12m6-6H6"
-              />
-            </svg>
-          </span>
+                      <span className="upload-plus">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            className="upload-icon"
+                        >
+                          <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M12 6v12m6-6H6"
+                          />
+                        </svg>
+                    </span>
 
                     <p>Upload files</p>
-                    <small>
-                        .txt, .md supported{files.length > 0 ? ` • ${files.length} selected` : ""}
-                    </small>
+                    <small>.txt, .md supported</small>
                 </div>
             </label>
         </section>

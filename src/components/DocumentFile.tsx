@@ -4,13 +4,15 @@ import delIcon from "../assets/icons/xmark.svg";
 
 interface DocumentFileProps {
     file: {
+        fileId: number;
         fileName: string;
         fileSize: number;
         fileChars: number;
     };
+    onDelete: (fileId: number) => void;
 }
 
-export default function DocumentFile({ file }: DocumentFileProps) {
+export default function DocumentFile({ file, onDelete }: DocumentFileProps) {
     return (
         <section className="doc-file">
             <div className="file-content">
@@ -25,7 +27,7 @@ export default function DocumentFile({ file }: DocumentFileProps) {
                     </div>
                 </div>
 
-                <button className="file-del" type="button" aria-label="Remove file">
+                <button onClick={() => onDelete(file.fileId)} className="file-del" type="button" aria-label="Remove file">
                     <img className="file-icon" src={delIcon} alt="delete-icon"/>
                 </button>
             </div>
